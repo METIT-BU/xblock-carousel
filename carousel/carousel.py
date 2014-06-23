@@ -36,7 +36,7 @@ class CarouselBlock(XBlock):
 
     def student_view(self, context):
         """
-        Lab view, displayed to the student
+        View displayed to the student
         """
 
 	root = ET.fromstring(self.data)
