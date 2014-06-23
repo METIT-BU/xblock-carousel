@@ -1,7 +1,7 @@
 xblock-carousel
 =============
-Xblock to provide carousel of multimedia content including images, video, documents(pdf, ppt, doc, etc...).
-This xBlock supports three wed hosted media formats in a unified media carousel for course content presentation.
+Xblock to provide carousel of multimedia instructional content including images, video, documents.
+This xBlock currently supports three web hosted media formats in a unified media carousel for course content presentation. This Xblock also provides a way to integrate instructional media with a separate workspace that could be used for hands-on activities.
 
 * **Images**- Any web hosted image in a format supported by the HTML <img> tag (jpg, png, gif) 
 * **Youtube Videos**- Any YouTube hosted video.
