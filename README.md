@@ -9,8 +9,8 @@ This xBlock supports three wed hosted media formats in a unified media carousel 
 
 A demo for the above xblock can be found [here](http://met-testedx2.bu.edu:8000/courses/BU/99/2014/about "Carousel XBlock demo")
 
-user: user@test.com
-password: user
+* **user**: user@test.com
+* **password**: user
 
 Examples
 --------
