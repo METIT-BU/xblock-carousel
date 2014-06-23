@@ -13,7 +13,7 @@ from StringIO import StringIO
 
 class CarouselBlock(XBlock):
     """
-    An XBlock providing a responsive images carousel
+    An XBlock providing a media carousel 
     """
 
     display_name = String(help="This name appears in horizontal navigation at the top of the page.", 
@@ -61,9 +61,7 @@ class CarouselBlock(XBlock):
         fragment.add_css_url("https://vjs.zencdn.net/4.5.1/video-js.css")
         fragment.add_javascript_url("https://vjs.zencdn.net/4.5.1/video.js")
         fragment.add_javascript(load_resource('public/js/youtube.js'))
-        fragment.add_javascript('function CarouselBlock(runtime, element) { console.log("ok..."); }')
-        fragment.initialize_js('CarouselBlock')
-
+        
         return fragment
 
     def studio_view(self, context):
