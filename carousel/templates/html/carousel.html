@@ -1,0 +1,22 @@
+<div class="seq_other">               
+    <div class="carousel" data-transition="slide" >        		
+        {% for child in items %}
+        {% if child.0 == "img" %}
+            <div>
+                <img src="{{ child.1 }}"  width="{{ child.2 }}" height="{{ child.3 }}">
+            </div>
+        {% endif %}
+        {% if child.0 == "video" %}
+            <div>
+                <video id="vid{{ forloop.counter }}" src="" class="video-js vjs-default-skin" controls preload="auto"  width="{{ child.2 }}"  height="{{ child.3 }}" data-setup='{ "techOrder": ["youtube"], "src":   "{{ child.1 }}" }'>
+                </video>
+            </div>
+        {% endif %}
+        {% if child.0 == "doc" %}
+            <div> 
+                <object data="http://docs.google.com/viewer?url={{ child.1 }}&embedded=true" width="{{ child.2 }}" height="{{ child.3 }}" style="border: none;"></object>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
