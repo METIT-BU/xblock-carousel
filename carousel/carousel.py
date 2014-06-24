@@ -4,7 +4,7 @@ from lxml import etree
 from xml.etree import ElementTree as ET
 
 from xblock.core import XBlock
-from xblock.fields import Scope, Integer, String
+from xblock.fields import Scope, Integer, String, List
 from xblock.fragment import Fragment
 
 from .utils import load_resource, render_template
@@ -33,24 +33,23 @@ class CarouselBlock(XBlock):
             </carousel>
           """
     ))
+    
+    data_items = List(default=[('img', 'http://met-content.bu.edu/etr2/content/images/Slide1.JPG', '100%', '625'),
+                               ('img', 'http://met-content.bu.edu/etr2/content/images/Slide2.JPG', '100%', '625'),
+                               ('img', 'http://met-content.bu.edu/etr2/content/images/Slide3.JPG', '100%', '625'), 
+                               ('video','http://www.youtube.com/watch?v=7uHeNryKUWk', '100%', '625'),
+                               ('doc', 'http%3A%2F%2Fwww.bu.edu%2Fmet-eti%2Ffiles%2F2013%2F03%2FFinal_VirtualLaboratoriesForLearning.pdf', '100%', '625')
+                              ])
 
     def student_view(self, context):
         """
         View displayed to the student
-        """
-
-	root = ET.fromstring(self.data)
-        items = []
-        for child in root:
-            if child.tag == 'doc': child.text = urllib.quote(child.text, '')
-            width = child.attrib.get('width', '100%')
-            height = child.attrib.get('height', '625')
-            items.append((child.tag, child.text, width, height))
+        """        
 
         fragment = Fragment()
 
         context = {
-            'items': items,
+            'items': self.data_items,
         }
 
         fragment.add_content(render_template('/templates/html/carousel.html', context))
@@ -85,6 +84,16 @@ class CarouselBlock(XBlock):
         try:
             etree.parse(StringIO(xml_content))
             self.data = xml_content
+            root = ET.fromstring(self.data)
+            items = []
+            for child in root:
+                if child.tag == 'doc': child.text = urllib.quote(child.text, '')
+                width = child.attrib.get('width', '100%')
+                height = child.attrib.get('height', '625')
+                items.append((child.tag, child.text, width, height))
+                
+            self.data_items = items
+
         except etree.XMLSyntaxError as e:
             return {
                 'result': 'error',
