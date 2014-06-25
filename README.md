@@ -30,6 +30,6 @@ TO-DO:
 
 * Add support for mp4 webm videos, other providers
 * Add support for html tags
-* Add support for the docuents uploaded to the studio static folder
+* Add support for the documents uploaded to the studio static folder
 * Add support for mozilla-pdf.js
 * Replace xml etree with lxml 
