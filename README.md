@@ -17,11 +17,11 @@ Examples
 ### Images, Videos and Documents
 ```xml
 <carousel>
-  <img>http://met-content.bu.edu/etr2/content/images/Slide1.JPG</img>
-  <img>http://met-content.bu.edu/etr2/content/images/Slide2.JPG</img>
-  <img>http://met-content.bu.edu/etr2/content/images/Slide3.JPG</img>
-  <video>http://www.youtube.com/watch?v=7uHeNryKUWk</video>
-  <doc>http://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf</doc>
+  <img src="http://met-content.bu.edu/etr2/content/images/Slide1.JPG" />
+  <img src="http://met-content.bu.edu/etr2/content/images/Slide2.JPG" />
+  <img src="http://met-content.bu.edu/etr2/content/images/Slide3.JPG" />
+  <video src="http://www.youtube.com/watch?v=7uHeNryKUWk" />
+  <doc src="http://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf" />
 </carousel>
 ```
 
