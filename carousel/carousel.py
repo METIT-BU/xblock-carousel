@@ -42,7 +42,7 @@ class CarouselBlock(XBlock):
         }
 
         fragment.add_content(render_template('/templates/html/carousel.html', context))
-        #fragment.add_javascript(load_resource('public/js/jquery-ui-1.10.4.custom.js'))
+        fragment.add_javascript(load_resource('public/js/jquery-ui-1.10.4.custom.js'))
         fragment.add_css(load_resource('public/css/responsive-carousel.css'))
         fragment.add_css(load_resource('public/css/responsive-carousel.slide.css'))
         fragment.add_javascript(load_resource('public/js/responsive-carousel.js'))
