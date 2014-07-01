@@ -42,13 +42,6 @@ class CarouselBlock(XBlock):
         }
 
         fragment.add_content(render_template('/templates/html/carousel.html', context))
-        fragment.add_javascript(load_resource('public/js/jquery-ui-1.10.4.custom.js'))
-        fragment.add_css(load_resource('public/css/responsive-carousel.css'))
-        fragment.add_css(load_resource('public/css/responsive-carousel.slide.css'))
-        fragment.add_javascript(load_resource('public/js/responsive-carousel.js'))
-        fragment.add_css(load_resource("public/css/video-js.css"))
-        fragment.add_javascript(load_resource("public/js/video.js"))
-        fragment.add_javascript(load_resource('public/js/youtube.js'))
 
         return fragment
 
@@ -108,7 +101,11 @@ class CarouselBlock(XBlock):
         """
         xml = etree.Element('carousel')
         for item in items_list:
-            tag = etree.SubElement(xml, item[0], src=item[1], width=item[2], height=item[3])
+            if item[0] == 'doc':
+                url = urllib.unquote(item[1])
+            else:
+                url = item[1]
+            tag = etree.SubElement(xml, item[0], src=url, width=item[2], height=item[3])
         return etree.tostring(xml, pretty_print=True)
 
 
