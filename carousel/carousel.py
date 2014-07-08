@@ -1,6 +1,3 @@
-import textwrap
-import urllib
-
 from lxml import etree
 from xml.etree import ElementTree as ET
 
@@ -27,7 +24,7 @@ class CarouselBlock(XBlock):
         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide2.JPG', '100%', '625'),
         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide3.JPG', '100%', '625'), 
         ('video','http://www.youtube.com/watch?v=7uHeNryKUWk', '100%', '625'),
-        ('doc', 'http%3A%2F%2Fwww.bu.edu%2Fmet-eti%2Ffiles%2F2013%2F03%2FFinal_VirtualLaboratoriesForLearning.pdf', '100%', '625')],
+        ('doc', 'http://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf', '100%', '625')],
         scope=Scope.content
     )
 
@@ -49,6 +46,8 @@ class CarouselBlock(XBlock):
         fragment.add_css(load_resource("public/css/video-js.css"))
         fragment.add_javascript(load_resource("public/js/video.js"))
         fragment.add_javascript(load_resource('public/js/youtube.js'))
+        fragment.add_javascript("function CarouselBlock(runtime, element) { $('.carousel').carousel(); }")
+        fragment.initialize_js("CarouselBlock")
 
         return fragment
 
@@ -95,7 +94,7 @@ class CarouselBlock(XBlock):
         items = []
         for item_element in items_elements:
             item_tag = item_element.tag
-            item_src = urllib.quote(item_element.get('src'), '') if item_tag == 'doc' else item_element.get('src')  
+            item_src = item_element.get('src')  
             item_width = item_element.get('width', '100%')
             item_height = item_element.get('height', '625')
             items.append((item_tag, item_src, item_width, item_height))
