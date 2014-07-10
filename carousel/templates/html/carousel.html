@@ -8,8 +8,17 @@
         {% endif %}
         {% if child.0 == "video" %}
             <div>
-                <video id="vid{{ forloop.counter }}" class="video-js vjs-default-skin" controls preload="auto"  width="{{ child.2 }}"  height="{{ child.3 }}" data-setup='{ "techOrder": ["youtube"], "src":   "{{ child.1 }}" }'>
+                <video id="vid{{ forloop.counter }}" class="video-js vjs-default-skin" width="{{ child.2 }}"  height="{{ child.3 }}" >
                 </video>
+                <script>
+                    videojs(document.getElementsByClassName("video-js")[0], {
+                        controls: true,
+                        preload: "auto",
+                        techOrder: ["youtube"],
+                        src: "{{ child.1 }}" 
+                        }, function(){
+                    });
+                </script>
             </div>
         {% endif %}
         {% if child.0 == "doc" %}
