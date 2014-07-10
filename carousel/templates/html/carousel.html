@@ -11,7 +11,7 @@
                 <video id="vid{{ forloop.counter }}" class="video-js vjs-default-skin" width="{{ child.2 }}"  height="{{ child.3 }}" >
                 </video>
                 <script>
-                    videojs(document.getElementById("vid{{ forloop.counter }}
+                    videojs(document.getElementById("vid{{ forloop.counter }}"), {
                         preload: "auto",
                         techOrder: ["youtube"],
                         src: "{{ child.1 }}" 
