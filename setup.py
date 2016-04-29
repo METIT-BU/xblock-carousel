@@ -15,7 +15,7 @@ def package_data(pkg, root_list):
 
 setup(
     name='xblock-multimedia-carousel',
-    version='0.1',
+    version='1.0',
     description='XBlock - Multimedia-Carousel',
     packages=['carousel'],
     install_requires=[

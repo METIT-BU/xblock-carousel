@@ -58,10 +58,11 @@ class CarouselBlock(XBlock):
         fragment.add_css(load_resource('public/css/responsive-carousel.css'))
         fragment.add_css(load_resource('public/css/responsive-carousel.slide.css'))
         fragment.add_javascript(load_resource('public/js/responsive-carousel.js'))
+        fragment.add_javascript(load_resource('public/js/responsive-carousel.loop.js'))
         fragment.add_css_url("https://vjs.zencdn.net/4.5.1/video-js.css")
         fragment.add_javascript_url("https://vjs.zencdn.net/4.5.1/video.js")
         fragment.add_javascript(load_resource('public/js/youtube.js'))
-        fragment.add_javascript('function CarouselBlock(runtime, element) { console.log("success..."); }')
+        fragment.add_javascript('function CarouselBlock(runtime, element) {$(".carousel").carousel();console.log("OK");}')
         fragment.initialize_js('CarouselBlock')
 
         return fragment
