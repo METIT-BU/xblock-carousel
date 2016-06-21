@@ -102,11 +102,11 @@
     opacity: 1;
 }
 .arrows .carousel-nav a.next {
-    background-image: url('https://25f752f1551c563b1b96082a0931c8ad010794ec.googledrive.com/host/0B6dCTu4Hipb2M2s1V3VFaElVd0U/arrow-right.png');
+    background-image: url('https://s3.amazonaws.com/met-grades/arrow-right.png');
     right: 1em;
 }
 .arrows .carousel-nav a.prev {
-    background-image: url('https://25f752f1551c563b1b96082a0931c8ad010794ec.googledrive.com/host/0B6dCTu4Hipb2M2s1V3VFaElVd0U/arrow-left.png');
+    background-image: url('https://s3.amazonaws.com/met-grades/arrow-left.png');
     left: 1em;
 }
 
