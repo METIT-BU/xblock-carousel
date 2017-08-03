@@ -21,7 +21,7 @@ Examples
   <img src="http://met-content.bu.edu/etr2/content/images/Slide2.JPG" />
   <img src="http://met-content.bu.edu/etr2/content/images/Slide3.JPG" />
   <video src="http://www.youtube.com/watch?v=7uHeNryKUWk" />
-  <doc src="http://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf" />
+  <doc src="https://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf" />
 </carousel>
 ```
 
