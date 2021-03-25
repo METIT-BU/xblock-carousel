@@ -7,11 +7,6 @@ This xBlock currently supports three web hosted media formats in a unified media
 * **Youtube Videos**- Any YouTube hosted video.
 * **Documents**- Web hosted documents are rendered though Google Doc Viewer and can in and supported format. (pdf, doc, xls, ppt)
 
-A demo for the above xblock can be found [here](http://met-testedx2.bu.edu:8000/courses/MET/101/2014/about "Carousel XBlock demo")
-
-* **user**: user@test.com
-* **password**: user
-
 Examples
 --------
 ### Images, Videos and Documents
